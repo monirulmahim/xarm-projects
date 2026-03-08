@@ -151,7 +151,7 @@ class XArmController(Node):
             
             #initial 210
 
-        self.initial_position()
+        self.initial_position() #Minha's Code
 
 def main():
     rclpy.init()
