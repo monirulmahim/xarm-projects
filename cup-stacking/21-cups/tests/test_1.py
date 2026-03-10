@@ -105,7 +105,7 @@ class XArmController(Node):
     
     def run(self):
 
-        zs_heights = [72, 166, 255, 345, 435]
+        zs_heights = [72, 166, 255, 345, 435, 525]
 
         self.initial_position()
         
@@ -113,24 +113,39 @@ class XArmController(Node):
         cups = [
             
             # pickup_x, pickup_y, pickup_height, drop_x, drop_y, drop_height
-            (190, 0, zs_heights[2], 400, -160, zs_heights[0]),
+            (190, 0, zs_heights[2], 400, -240, zs_heights[0]),
+            (190, -200, zs_heights[1] , 400, -160, zs_heights[0]),
             (190, -120, zs_heights[1] , 400, -80, zs_heights[0]),
             (190, -40, zs_heights[1], 400, 0, zs_heights[0]),
             (190, 40, zs_heights[1], 400, 80, zs_heights[0]),
             (190, 120, zs_heights[1], 400, 160, zs_heights[0]),
-            
-            (150, -160, zs_heights[0], 400, -120, zs_heights[1]),
-            (150, -80, zs_heights[0], 400, -40, zs_heights[1]),
-            (150, 0, zs_heights[0], 400, 40, zs_heights[1]),
-            (150, 80, zs_heights[0], 400, 120, zs_heights[1]),
-            
+
+
+            (190, 200, zs_heights[1], 400, -200, zs_heights[1]),
+            (150, -240, zs_heights[0], 400, -120, zs_heights[1]),
+            (150, -160, zs_heights[0], 400, -40, zs_heights[1]),
+            (150, -80, zs_heights[0], 400, 40, zs_heights[1]),
+            (150, 0, zs_heights[0], 400, 120, zs_heights[1]),
+
+
+            (150, 80, zs_heights[0], 400, -160, zs_heights[2]),
             (150, 160, zs_heights[0], 400, -80, zs_heights[2]),
-            (224, -160, zs_heights[0], 400, 0, zs_heights[2]),
-            (224, -80, zs_heights[0], 400, 80, zs_heights[2]),
-            
-            (224, 0, zs_heights[0], 400, -40, zs_heights[3]),
-            (224, 80, zs_heights[0], 400, 40, zs_heights[3]),
+            (150, 240, zs_heights[0], 400, 0, zs_heights[2]),
+            (224, -240, zs_heights[0], 400, 80, zs_heights[2]),
+
+
+
+            (224, -160, zs_heights[0], 400, -120, zs_heights[3]),
+            (224, -80, zs_heights[0], 400, -40, zs_heights[3]),
+            (224, 0, zs_heights[0], 400, 40, zs_heights[3]),
+
+
+            (224, 80, zs_heights[0], 400, -80, zs_heights[4]),
             (224, 160, zs_heights[0], 400, 0, zs_heights[4]),
+
+
+            (224, 240, zs_heights[0], 400, -40, zs_heights[5]),
+            
             ]
         
         
