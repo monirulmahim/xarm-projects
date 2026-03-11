@@ -99,7 +99,7 @@ class XArmController(Node):
         return self.gripper(position=0.15, max_effort=0.0)
     
     def initial_position(self):
-        self.move_cartesian(300, 0, 300) # initial position
+        self.move_cartesian(300, 0, 400) #initial position
         self.gripper_open()
     
     
@@ -120,29 +120,23 @@ class XArmController(Node):
             (190, 40, zs_heights[1], 400, 80, zs_heights[0]),
             (190, 120, zs_heights[1], 400, 160, zs_heights[0]),
 
-
             (190, 200, zs_heights[1], 400, -200, zs_heights[1]),
             (150, -240, zs_heights[0], 400, -120, zs_heights[1]),
             (150, -160, zs_heights[0], 400, -40, zs_heights[1]),
             (150, -80, zs_heights[0], 400, 40, zs_heights[1]),
             (150, 0, zs_heights[0], 400, 120, zs_heights[1]),
 
-
             (150, 80, zs_heights[0], 400, -160, zs_heights[2]),
             (150, 160, zs_heights[0], 400, -80, zs_heights[2]),
             (150, 240, zs_heights[0], 400, 0, zs_heights[2]),
             (224, -240, zs_heights[0], 400, 80, zs_heights[2]),
 
-
-
             (224, -160, zs_heights[0], 400, -120, zs_heights[3]),
             (224, -80, zs_heights[0], 400, -40, zs_heights[3]),
             (224, 0, zs_heights[0], 400, 40, zs_heights[3]),
 
-
             (224, 80, zs_heights[0], 400, -80, zs_heights[4]),
             (224, 160, zs_heights[0], 400, 0, zs_heights[4]),
-
 
             (224, 240, zs_heights[0], 400, -40, zs_heights[5]),
             
@@ -150,18 +144,34 @@ class XArmController(Node):
         
         
         for px, py, ph, dx, dy, dh in cups:
+
             
             # height_CH_Value = 350 if counter == 8 else 440 if counter == 13 else 300
             counter += 1
-            height_CH_Value = {11: 370, 12: 370, 13: 440, 14: 470, 15: 480}.get(counter, 300)
-            self.move_cartesian(px, py, height_CH_Value)
-            self.move_cartesian(px, py, ph)
-            self.gripper_close()
-            self.move_cartesian(px, py, height_CH_Value)
-            self.move_cartesian(dx, dy, height_CH_Value)
-            self.move_cartesian(dx, dy, dh)
-            self.gripper_open()
-            self.move_cartesian(dx, dy, height_CH_Value)
+            if counter in (0, 21):
+                if counter in (15, 16):
+                    height_CH_Value = 370
+
+                elif counter in(17, 18):
+                    height_CH_Value = 480
+
+                elif counter in (19,20):
+                    height_CH_Value = 490
+
+                elif counter == 21:
+                    height_CH_Value = 530
+
+                else:
+                    height_CH_Value = 300
+
+                self.move_cartesian(px, py, height_CH_Value)
+                self.move_cartesian(px, py, ph)
+                self.gripper_close()
+                self.move_cartesian(px, py, height_CH_Value)
+                self.move_cartesian(dx, dy, height_CH_Value)
+                self.move_cartesian(dx, dy, dh)
+                self.gripper_open()
+                self.move_cartesian(dx, dy, height_CH_Value)
             print(counter)
             
             #initial 210
