@@ -33,12 +33,12 @@ class XArmController(Node):
         
         self.get_logger().info("Ready")
         
-    def move_cartesian(self, x: float, y: float, z: float) -> bool:
+    def move_cartesian(self, x: float, y: float, z: float, speed: float = XARM_SPEED, acc: float = XARM_ACC) -> bool:
         req = MoveCartesian.Request() # Create a request object
         
         req.pose = [float(x), float(y), float(z), 3.14, 0.0, 0.0] # Set the desired pose (x, y, z, roll, pitch, yaw)
-        req.speed = XARM_SPEED
-        req.acc = XARM_ACC
+        req.speed = speed
+        req.acc = acc
         req.mvtime = 0.0 # Let the controller calculate the motion time based on speed and distance
         
         if hasattr(req, "wait"):
@@ -164,14 +164,19 @@ class XArmController(Node):
                 else:
                     height_CH_Value = 300
 
-                self.move_cartesian(px, py, height_CH_Value)
-                self.move_cartesian(px, py, ph)
+                
+                slow = counter == 21
+                spd = float(100) if slow else XARM_SPEED
+                acc = float(500) if slow else XARM_ACC
+
+                self.move_cartesian(px, py, height_CH_Value, spd, acc)
+                self.move_cartesian(px, py, ph, spd, acc)
                 self.gripper_close()
-                self.move_cartesian(px, py, height_CH_Value)
-                self.move_cartesian(dx, dy, height_CH_Value)
-                self.move_cartesian(dx, dy, dh)
+                self.move_cartesian(px, py, height_CH_Value, spd, acc)
+                self.move_cartesian(dx, dy, height_CH_Value, spd, acc)
+                self.move_cartesian(dx, dy, dh, spd, acc)
                 self.gripper_open()
-                self.move_cartesian(dx, dy, height_CH_Value)
+                self.move_cartesian(dx, dy, height_CH_Value, spd, acc)
             print(counter)
             
             #initial 210
