@@ -20,5 +20,5 @@ ROS 2 project for controlling the **xArm7**. This repository is currently under 
 - Create a step-by-step guide on how to use the code
 
 <p align="center">
-  <img src="https://i.ibb.co/DBSdtf1/Untitled-Project-2.gif" width="100%"/>
+  <img src="https://i.ibb.co/DBSdtf1/Untitled-Project-2.gif" width="300"/>
 </p>
