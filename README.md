@@ -3,7 +3,7 @@
 ROS 2 project for controlling the **xArm7**. This repository is currently under development and testing phase.
 
 <p align="center">
-  <img src="https://i.ibb.co/Y43y3Nn5/Untitled-Project.gif" width="500"/>
+  <img src="https://i.ibb.co/rR5PTzYy/Untitled-Project.gif" width="500"/>
 </p>
 
 ## Repository Status
