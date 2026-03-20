@@ -2,6 +2,8 @@
 
 ROS 2 project for controlling the **xArm7**. This repository is currently under development and testing phase.
 
+![xArm7 Demo](https://i.ibb.co/rR5PTzYy/Untitled-Project.gif)
+
 ## Repository Status
 - Only **cup stacking** is implemented so far
 - More features and code updates coming soon
@@ -13,6 +15,8 @@ ROS 2 project for controlling the **xArm7**. This repository is currently under 
 - Use with caution on real hardware  
 
 ## Future Plans
-- Add more robotic tasks & Projects
-- Improve stability and reliability  
-- Create a step-by-step usage guide  
+- Upload additional project files after testing  
+- Add calibration files to improve accuracy and reduce errors  
+- Integrate camera control with xArm7 motion using OpenCV  
+- Improve overall stability and reliability  
+- Create a step-by-step guide on how to use the code
