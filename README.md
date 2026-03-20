@@ -2,7 +2,7 @@
 
 ROS 2 project for controlling the **xArm7**. This repository is currently under development and testing phase.
 
-![xArm7 Demo](https://i.ibb.co/rR5PTzYy/Untitled-Project.gif)
+![xArm7 Demo](https://i.ibb.co/Y43y3Nn5/Untitled-Project.gif)
 
 ## Repository Status
 - Only **cup stacking** is implemented so far
@@ -20,3 +20,4 @@ ROS 2 project for controlling the **xArm7**. This repository is currently under 
 - Integrate camera control with xArm7 motion using OpenCV  
 - Improve overall stability and reliability  
 - Create a step-by-step guide on how to use the code
+
