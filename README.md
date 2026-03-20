@@ -2,12 +2,6 @@
 
 ROS 2 project for controlling the **xArm7**. This repository is currently under development and testing phase.
 
-<p align="center">
-  <img src="https://i.ibb.co/DBSdtf1/Untitled-Project-2.gif" width="400"/>
-</p>
-
-
-
 ## Repository Status
 - Only **cup stacking** is implemented so far
 - More features and code updates coming soon
@@ -25,3 +19,6 @@ ROS 2 project for controlling the **xArm7**. This repository is currently under 
 - Improve overall stability and reliability  
 - Create a step-by-step guide on how to use the code
 
+<p align="center">
+  <img src="https://i.ibb.co/DBSdtf1/Untitled-Project-2.gif" width="100%"/>
+</p>
